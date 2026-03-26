@@ -1,0 +1,13 @@
+com\admin\crm\entity\CrmRecommendation.class
+com\admin\system\entity\SysUser.class
+com\admin\crm\entity\CrmClient.class
+com\admin\crm\entity\CrmProcessLog.class
+com\admin\crm\entity\CrmContact.class
+com\admin\system\entity\SysRole.class
+com\admin\crm\entity\CrmCommunication.class
+com\admin\crm\entity\CrmCandidate.class
+com\admin\crm\entity\CrmInterview.class
+com\admin\system\vo\LoginVo.class
+com\admin\crm\entity\CrmJob.class
+com\admin\crm\entity\CrmTag.class
+com\admin\system\entity\SysMenu.class

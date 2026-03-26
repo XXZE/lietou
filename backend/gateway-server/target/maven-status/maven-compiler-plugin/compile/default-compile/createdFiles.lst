@@ -1,0 +1,3 @@
+com\admin\gateway\filter\JwtAuthFilter.class
+com\admin\gateway\config\CorsConfig.class
+com\admin\gateway\GatewayServerApplication.class

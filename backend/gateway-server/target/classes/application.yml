@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-server
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  cloud:
+    gateway:
+      routes:
+        - id: system-service
+          uri: lb://system-service
+          predicates:
+            - Path=/system/**
+        - id: auth-service
+          uri: lb://system-service
+          predicates:
+            - Path=/auth/**
+        - id: crm-service
+          uri: lb://system-service
+          predicates:
+            - Path=/crm/**
+        - id: file-service
+          uri: lb://system-service
+          predicates:
+            - Path=/file/**
+        - id: files-static
+          uri: lb://system-service
+          predicates:
+            - Path=/files/**
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+jwt:
+  secret: admin-platform-secret-key-2024-admin-platform-secret-key-2024
+  expiration: 86400000

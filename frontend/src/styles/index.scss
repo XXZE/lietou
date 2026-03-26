@@ -1,0 +1,356 @@
+// Global Styles
+body {
+  height: 100%;
+  -moz-osx: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #303133;
+  font-size: 14px;
+}
+
+// Login Page Styles
+.login-container {
+  min-height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .login-form {
+    position: relative;
+    width: 520px;
+    max-width: 100%;
+    padding: 60px 35px 0;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    .title-container {
+      position: relative;
+      text-align: center;
+      margin-bottom: 40px;
+
+      h3 {
+        font-size: 26px;
+        color: #333;
+        margin: 0 auto 40px;
+        font-weight: bold;
+      }
+    }
+
+    .el-input {
+      display: inline-block;
+      height: 47px;
+      width: 100%;
+
+      input {
+        height: 47px;
+        background: #f5f7fa;
+        border-radius: 4px;
+        padding: 12px 15px 12px 40px;
+        vertical-align: middle;
+
+        &:focus {
+          background: #fff;
+          border-color: #667eea;
+        }
+      }
+
+      .el-input__prefix {
+        left: 12px;
+        color: #999;
+      }
+    }
+
+    .el-button {
+      width: 100%;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 4px;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+// Layout Styles
+.app-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &.mobile.openSidebar {
+    position: fixed;
+    top: 0;
+  }
+}
+
+.sidebar-container {
+  transition: width 0.28s;
+  width: 210px !important;
+  background-color: #304156;
+  height: 100%;
+  position: fixed;
+  font-size: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  overflow: hidden;
+
+  .scrollbar-wrapper {
+    overflow-x: hidden !important;
+  }
+
+  .el-scrollbar__bar.is-vertical {
+    right: 0;
+  }
+
+  .el-scrollbar {
+    height: 100%;
+  }
+
+  &.has-logo {
+    .el-scrollbar {
+      height: calc(100% - 50px);
+    }
+  }
+
+  .is-horizontal {
+    display: none;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .svg-icon {
+    margin-right: 16px;
+    font-size: 18px;
+  }
+
+  .el-menu {
+    border: none;
+    height: 100%;
+    width: 100% !important;
+    background-color: #304156;
+
+    .el-menu-item, .el-submenu__title {
+      color: #bfcbd9;
+      background-color: #304156;
+
+      &:hover {
+        background-color: #263445 !important;
+        color: #fff;
+      }
+    }
+
+    .el-submenu.is-active > .el-submenu__title {
+      color: #f4f4f5 !important;
+    }
+
+    .el-submenu .el-menu-item {
+      min-width: 0;
+      padding-left: 50px !important;
+      background-color: #1f2d3d !important;
+
+      &:hover {
+        background-color: #001528 !important;
+      }
+    }
+  }
+
+  .submenu-title-noDropdown,
+  .el-submenu__title {
+    &:hover {
+      background-color: #263445 !important;
+    }
+  }
+
+  .is-active > .el-submenu__title {
+    color: #f4f4f5 !important;
+  }
+
+  & .nest-menu .el-submenu > .el-submenu__title,
+  & .el-submenu .el-menu-item {
+    min-width: 210px !important;
+    background-color: #1f2d3d !important;
+
+    &:hover {
+      background-color: #001528 !important;
+    }
+  }
+
+  .el-menu--collapse .el-submenu {
+    overflow: hidden;
+
+    > .el-submenu__title {
+      > .el-submenu__icon-arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+.main-container {
+  min-height: 100%;
+  transition: margin-left 0.28s;
+  margin-left: 210px;
+  position: relative;
+}
+
+.app-header {
+  position: relative;
+  height: 50px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 10;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    .hamburger {
+      padding: 0 10px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+
+    .user-dropdown {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      .user-name {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+.app-main {
+  min-height: calc(100vh - 50px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background: #f0f2f5;
+}
+
+// Card Styles
+.content-card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ebeef5;
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #303133;
+    }
+  }
+}
+
+// Table Styles
+.el-table {
+  th {
+    background: #f5f7fa !important;
+    color: #606266;
+    font-weight: 500;
+  }
+}
+
+// Form Styles
+.el-form {
+  .el-form-item__label {
+    font-weight: 500;
+  }
+}
+
+// Pagination
+.el-pagination {
+  margin-top: 20px;
+  text-align: right;
+}
+
+// Tags View
+.tags-view-container {
+  height: 34px;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #d8dce5;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+
+  .tags-view-item {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #d8dce5;
+    color: #495057;
+    background: #fff;
+    padding: 0 8px;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 4px;
+    border-radius: 2px;
+
+    &.active {
+      background-color: #42b983;
+      color: #fff;
+      border-color: #42b983;
+
+      &::before {
+        content: '';
+        background: #fff;
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        position: relative;
+        margin-right: 2px;
+      }
+    }
+  }
+}
+
+// Fix Element UI Card
+.el-card {
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
