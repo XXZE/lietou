@@ -344,7 +344,7 @@ CREATE TABLE IF NOT EXISTS crm_interview (
 
 -- 插入默认管理员用户 (密码: admin123)
 INSERT INTO sys_user (username, password, nickname, email, phone, status) VALUES
-('admin', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '超级管理员', 'admin@example.com', '13800138000', 1);
+('admin', '$2a$10$/vwDKVWNv30./d2saOh7Ze1D.RLVr.Le8fjubcBbCgYxSD6gyKb.a', '超级管理员', 'admin@example.com', '13800138000', 1);
 
 -- 插入默认角色
 INSERT INTO sys_role (code, name, status) VALUES

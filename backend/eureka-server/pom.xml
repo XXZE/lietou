@@ -22,9 +22,31 @@
     
     <build>
         <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.5.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.admin.eureka.EurekaServerApplication</mainClass>
+                    <jvmArguments>
+                        --add-opens java.base/java.lang.invoke=ALL-UNNAMED
+                    </jvmArguments>
+                    <!-- 打包可执行 JAR -->
+                    <executable>true</executable>
+                    <!-- 添加启动脚本 -->
+                    <layout>JAR</layout>
+                </configuration>
             </plugin>
         </plugins>
     </build>

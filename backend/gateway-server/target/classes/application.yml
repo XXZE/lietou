@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   application:
@@ -11,26 +11,13 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: system-service
+        - id: system-route
           uri: lb://system-service
           predicates:
-            - Path=/system/**
-        - id: auth-service
-          uri: lb://system-service
-          predicates:
-            - Path=/auth/**
-        - id: crm-service
-          uri: lb://system-service
-          predicates:
-            - Path=/crm/**
-        - id: file-service
-          uri: lb://system-service
-          predicates:
-            - Path=/file/**
-        - id: files-static
-          uri: lb://system-service
-          predicates:
-            - Path=/files/**
+            - Path=/api/**
+          filters:
+                # 去掉 /api 前缀，把 /api/crm/xxx 转为 /crm/xxx
+                - StripPrefix=1
       discovery:
         locator:
           enabled: true
@@ -45,4 +32,4 @@ eureka:
 
 jwt:
   secret: admin-platform-secret-key-2024-admin-platform-secret-key-2024
-  expiration: 86400000
+  expiration: 604800000

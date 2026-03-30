@@ -38,7 +38,8 @@ public class JwtAuthFilter implements GlobalFilter, Ordered {
         System.out.println("请求路径: " + path);
 
         // 跳过不需要认证的路径
-        if (path.startsWith("/auth/login") || path.startsWith("/auth/register") || path.startsWith("/files/")) {
+        if (path.startsWith("/api/auth/login") || path.startsWith("/api/auth/register") || path.startsWith("/api/files/") ||
+            path.startsWith("/auth/login") || path.startsWith("/auth/register") || path.startsWith("/files/")) {
             System.out.println("跳过认证路径: " + path);
             return chain.filter(exchange);
         }

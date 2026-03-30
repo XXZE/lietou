@@ -82,11 +82,18 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.5.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <jvmArguments>
                         --add-opens java.base/java.lang.invoke=ALL-UNNAMED
                     </jvmArguments>
-                    <mainClass>com.example.Application</mainClass>
+                    <mainClass>com.admin.SystemProviderApplication</mainClass>
                     <!-- 打包可执行 JAR -->
                     <executable>true</executable>
                     <!-- 添加启动脚本 -->
